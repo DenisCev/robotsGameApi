@@ -103,47 +103,93 @@ class Controller_Piece extends Controller_Base
             { 
 			    $query = DB::insert('pieces');
 			    $query->set(array(
-			        'name' => 'John',
-			        'side' => 'Doe',
-			        'element' => 'John',
-			        'rarity' => 'Doe',
+			        'name' => 'Strength Arm',
+			        'side' => 'Left',
+			        'element' => 'Strength',
+			        'rarity' => 'Normal',
 			        'life' => 1,
-			        'damage' => 1,
+			        'damage' => 4,
 			        'speed' => 1,
-			        'cadence' => 1,
-			        'description' => 'John'
+			        'cadence' => 2,
+			        'description' => 'Puede tener o no'
 			    ));
 			    $query->execute();
 			    $query = null;
 
 			    $query = DB::insert('pieces');
 			    $query->set(array(
-			        'name' => 'John2',
-			        'side' => 'Doe',
-			        'element' => 'John',
-			        'rarity' => 'Doe',
-			        'life' => 1,
-			        'damage' => 1,
+			        'name' => 'Strength Arm',
+			        'side' => 'Left',
+			        'element' => 'Strength',
+			        'rarity' => 'Rare',
+			        'life' => 2,
+			        'damage' => 7,
 			        'speed' => 1,
-			        'cadence' => 1,
-			        'description' => 'John'
+			        'cadence' => 2,
+			        'description' => 'Puede tener o no'
 			    ));
 			    $query->execute();
 			    $query = null;
 			    
 			    $query = DB::insert('pieces');
 			    $query->set(array(
-			        'name' => 'John3',
-			        'side' => 'Doe',
-			        'element' => 'John',
-			        'rarity' => 'Doe',
+			        'name' => 'Agility Arm',
+			        'side' => 'Right',
+			        'element' => 'Agility',
+			        'rarity' => 'Normal',
 			        'life' => 1,
 			        'damage' => 1,
-			        'speed' => 1,
+			        'speed' => 4,
 			        'cadence' => 1,
-			        'description' => 'John'
+			        'description' => 'Puede tener o no'
 			    ));
 			    $query->execute();
+			    $query = null;
+
+			    $query = DB::insert('pieces');
+			    $query->set(array(
+			        'name' => 'Junk01',
+			        'side' => 'Right',
+			        'element' => 'Defense',
+			        'rarity' => 'Legendary',
+			        'life' => 10,
+			        'damage' => 2,
+			        'speed' => 2,
+			        'cadence' => 3,
+			        'description' => 'La fortaleza de un veterano de guerra'
+			    ));
+			    $query->execute();
+			    $query = null;
+
+			    $query = DB::insert('pieces');
+			    $query->set(array(
+			        'name' => 'Defense Legs',
+			        'side' => 'Down',
+			        'element' => 'Defense',
+			        'rarity' => 'Rare',
+			        'life' => 6,
+			        'damage' => 1,
+			        'speed' => 2,
+			        'cadence' => 2,
+			        'description' => 'Puede tener o no'
+			    ));
+			    $query->execute();
+			    $query = null;
+			    
+			    $query = DB::insert('pieces');
+			    $query->set(array(
+			        'name' => 'Agility Legs',
+			        'side' => 'Down',
+			        'element' => 'Agility',
+			        'rarity' => 'Normal',
+			        'life' => 1,
+			        'damage' => 1,
+			        'speed' => 4,
+			        'cadence' => 1,
+			        'description' => 'Puede tener o no'
+			    ));
+			    $query->execute();
+			    
 
 			    $response = $this->response(array(
                     'code' => 200,
