@@ -11,7 +11,7 @@ class Users
             'name' => array('type' => 'varchar', 'constraint' => 100),
             'pass' => array('type' => 'varchar', 'constraint' => 255),
             'email' => array('type' => 'varchar', 'constraint' => 100),
-            'urlPhoto' => array('type' => 'varchar', 'constraint' => 200, 'null' => true),
+            'urlPhoto' => array('type' => 'varchar', 'constraint' => 400, 'null' => true),
             'defeats' => array('type' => 'int', 'constraint' => 11),
             'victories' => array('type' => 'int', 'constraint' => 11)
             ), array('id'));

@@ -417,4 +417,45 @@ class Controller_User extends Controller_Base
         }    
 	}
 
+    public function post_editPhoto()
+    {
+        try
+        {
+            $authenticated = self::requestAuthenticate();
+
+            if($authenticated == true)
+            {
+                if(!isset($_POST['urlPhoto'])) 
+                {
+                    return self::EmptyError();
+                }   
+
+                $info = self::getUserInfo();
+
+                $input = $_POST;
+
+                $path = 'http://' . $_SERVER['SERVER_NAME'] . '/sapiens/public/assets/img/' . $input['urlPhoto'] . '.png';
+
+                $query = DB::update('users');
+                $query->where('id', '=', $info['id']);
+                $query->value('urlPhoto', $path);
+                $query->execute();
+
+                $response = $this->response(array(
+                    'code' => 200,
+                    'message' => 'Foto cambiada con exito',
+                    'data' => $path
+                ));
+                return $response;
+            }
+            else
+            {
+                return self::AuthError();
+            }
+        }
+        catch (Exception $e)
+        {
+            return self::ServerError();
+        }
+    }
 }
