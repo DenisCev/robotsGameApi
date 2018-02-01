@@ -434,7 +434,7 @@ class Controller_User extends Controller_Base
 
                 $input = $_POST;
 
-                $path = 'http://' . $_SERVER['SERVER_NAME'] . '/sapiens/APIRobots/public/assets/img/' . $input['urlPhoto'] . '.png';
+                $path = 'http://' . $_SERVER['SERVER_NAME'] . '/sapiens/robotsGameApi/public/assets/img/' . $input['urlPhoto'] . '.png';
 
                 $query = DB::update('users');
                 $query->where('id', '=', $info['id']);
